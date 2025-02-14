@@ -3,6 +3,11 @@
 ## Overview
 The OpenCV Knowledge Assistant is a web application designed to provide answers to user queries by leveraging a Retrieval-Augmented Generation (RAG) approach. This application utilizes various libraries and models to perform web searches, retrieve relevant documents, and generate responses based on the context provided.
 
+## Paper
+[Corrective Retrieval Augmented Generation](https://arxiv.org/abs/2401.15884)
+
+![alt text](/src/figure.png)
+
 ## Example Outputs
 Here are some examples of the application in action:
 
@@ -10,7 +15,7 @@ Here are some examples of the application in action:
    ![alt text](/src/example1.png)
    ![alt text](/src/example2.png)
 
-**Out-of-fomain (with web-search)**:
+**Out-of-domain (with web-search)**:
     ![alt text](/src/example3.png)
     ![alt text](/src/example4.png)
 
