@@ -1,0 +1,4 @@
+/docs/
+/*.ipynb
+__pycache__/
+/.env
