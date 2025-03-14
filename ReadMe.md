@@ -1,20 +1,5 @@
 # Knowledge Assistant
 
-## Path in cluster
-```bash
-cd /storage/3030/AkhmetzyanovD/projects/prompt_engineering
-```
-
-## Docker in cluster
-```bash
-cd /storage/3030/AkhmetzyanovD/projects/prompt_engineering/docker
-```
-
-## DB in cluster
-```bash
-cd /storage/3030/AkhmetzyanovD/projects/prompt_engineering/docs
-```
-
 ## Overview
 The Knowledge Assistant is a web application designed to provide answers to user queries by leveraging a Retrieval-Augmented Generation (RAG) approach. This application utilizes various libraries and models to perform web searches, retrieve relevant documents, and generate responses based on the context provided.
 
