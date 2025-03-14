@@ -1,0 +1,25 @@
+ARG BASE_IMG=pytorch/pytorch:2.3.0-cuda12.1-cudnn8-runtime
+
+FROM $BASE_IMG
+
+# RUN apt-get update
+
+WORKDIR /workspace/proj
+
+ENV TZ=Europe/Moscow
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+# COPY ./requirements.txt /workspace
+
+RUN apt-get update && apt-get install ffmpeg libsm6 libxext6 git-lfs build-essential  -y
+RUN apt-get install -y bash curl
+
+COPY install.sh /workspace/proj/install.sh
+RUN chmod +x /workspace/proj/install.sh
+RUN /workspace/proj/install.sh
+
+EXPOSE 11434
+ENV OLLAMA_HOST=0.0.0.0
+ENV NVIDIA_DRIVER_CAPABILITIES=compute,utility
+ENV NVIDIA_VISIBLE_DEVICES=all
+ENV OLLAMA_MODELS=/workspace/proj

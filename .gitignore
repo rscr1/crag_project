@@ -1,0 +1,8 @@
+/*docs/
+/*.ipynb
+__pycache__/
+/.env
+*.db
+Procfile
+#
+plat_rag/

@@ -1,0 +1,27 @@
+services:
+    dar_service:
+        image: dar:v0
+        container_name: dar_rag_cont
+        shm_size: "12gb"
+        ipc: host
+        tty: true
+        ports:
+            - "22"
+        environment:
+            DISPLAY: ${DISPLAY}
+            GIT_USER_EMAIL: "ahmetzyanov@gosniias.ru"
+            GIT_USER_NAME: "AkhmetzyanovDR"
+        volumes:
+            - /storage/3030/AkhmetzyanovD:/AkhmetzyanovD
+            - /storage/db:/storage_db:ro
+            - /storage_labs/db:/storage_labs_db:ro
+        deploy:
+            resources:
+                reservations:
+                    devices:
+                        - driver: "nvidia"
+                          device_ids: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+                          capabilities: [gpu]
+                limits:
+                    cpus: '9.6'
+                    memory: 25.2gb
